@@ -17,6 +17,10 @@ var data = [
     {
         name: "Deadlift", 
         link: "https://www.youtube.com/embed/VL5Ab0T07e4"
+    },
+    {
+        name: "Front Squat",
+        link: "https://www.youtube.com/embed/v-mQm_droHg" 
     }
 ]
 
