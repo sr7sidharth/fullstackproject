@@ -1,0 +1,488 @@
+<%- include ("partials/header") %>
+<% var temp_num = 0; %>
+<% if (maxes.units == "lbs"){ %>
+    <% temp = maxes.bench; %>
+    <% var bench = parseFloat(temp).toFixed(1); %>
+    <% temp = maxes.press; %>
+    <% var press = parseFloat(temp).toFixed(1); %>
+    <% temp = maxes.squat; %>
+    <% var squat = parseFloat(temp).toFixed(1); %>
+    <% temp = maxes.deadlift; %>
+    <% var deadlift = parseFloat(temp).toFixed(1); %>
+<% }else{ %>
+    <% temp = maxes.bench * 2.2; %>
+    <% var bench = parseFloat(temp).toFixed(1); %>
+    <% temp = maxes.press * 2.2; %>
+    <% var press = parseFloat(temp).toFixed(1); %>
+    <% temp = maxes.squat * 2.2; %>
+    <% var squat = parseFloat(temp).toFixed(1); %>
+    <% temp = maxes.deadlift * 2.2; %>
+    <% var deadlift = parseFloat(temp).toFixed(1); %>
+<% } %>
+<h>Your input maxes in lbs: </h>
+<table class="table">
+    <thead>
+        <th>Bench</th>
+        <th>Press</th>
+        <th>Squat</th>
+        <th>Deadlift</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= bench %></td>
+            <td><%= press %></td>
+            <td><%= squat %></td>
+            <td><%= deadlift %></td>
+        </tr>
+    </tbody>
+</table>
+<% if (maxes.program == "nSuns"){ %>
+    <h>Selected Program: nSuns</h>
+    <a href="https://thefitness.wiki/routines/nsuns-lp/">Source</a>
+    <table class="table table-bordered">
+        <thead>
+            <th>Monday</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Bench</td>
+                <td><%= parseFloat(bench * 0.65).toFixed(1) %> x6</td>
+                <td><%= parseFloat(bench * 0.75).toFixed(1) %> x7</td>
+                <td><%= parseFloat(bench * 0.85).toFixed(1) %> x4</td>
+                <td><%= parseFloat(bench * 0.85).toFixed(1) %> x4</td>
+                <td><%= parseFloat(bench * 0.85).toFixed(1) %> x4</td>
+                <td><%= parseFloat(bench * 0.80).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.75).toFixed(1) %> x6</td>
+                <td><%= parseFloat(bench * 0.70).toFixed(1) %> x7</td>
+                <td><%= parseFloat(bench * 0.65).toFixed(1) %> x8+</td>
+            </tr>
+            <tr>
+                <td>Press</td>
+                <td><%= parseFloat(press * 0.50).toFixed(1) %> x6</td>
+                <td><%= parseFloat(press * 0.60).toFixed(1) %> x5</td>
+                <td><%= parseFloat(press * 0.70).toFixed(1) %> x3</td>
+                <td><%= parseFloat(press * 0.70).toFixed(1) %> x5</td>
+                <td><%= parseFloat(press * 0.70).toFixed(1) %> x7</td>
+                <td><%= parseFloat(press * 0.70).toFixed(1) %> x4</td>
+                <td><%= parseFloat(press * 0.70).toFixed(1) %> x6</td>
+                <td><%= parseFloat(press * 0.70).toFixed(1) %> x8</td>
+            </tr>
+            <tr>
+                <td>Assistance</td>
+                <td>Chest, Arms, Back</td>
+            </tr>
+        </tbody>
+        <thead>
+            <th>Tuesday</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Deadlift</td>
+                <td><%= parseFloat(deadlift * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.85).toFixed(1) %> x3</td>
+                <td><%= parseFloat(deadlift * 0.95).toFixed(1) %> x1+</td>
+                <td><%= parseFloat(deadlift * 0.90).toFixed(1) %> x3</td>
+                <td><%= parseFloat(deadlift * 0.85).toFixed(1) %> x3</td>
+                <td><%= parseFloat(deadlift * 0.80).toFixed(1) %> x3</td>
+                <td><%= parseFloat(deadlift * 0.75).toFixed(1) %> x3</td>
+                <td><%= parseFloat(deadlift * 0.70).toFixed(1) %> x3</td>
+                <td><%= parseFloat(deadlift * 0.65).toFixed(1) %> x3+</td>
+            </tr>
+            <tr>
+                <td>Front Squat</td>
+                <td><%= parseFloat(squat * 0.35).toFixed(1) %> x6</td>
+                <td><%= parseFloat(squat * 0.45).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.55).toFixed(1) %> x3</td>
+                <td><%= parseFloat(squat * 0.55).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.55).toFixed(1) %> x7</td>
+                <td><%= parseFloat(squat * 0.55).toFixed(1) %> x4</td>
+                <td><%= parseFloat(squat * 0.55).toFixed(1) %> x6</td>
+                <td><%= parseFloat(squat * 0.55).toFixed(1) %> x8</td>
+            </tr>
+            <tr>
+                <td>Assistance</td>
+                <td>Back, Abs</td>
+            </tr>
+        </tbody>
+        <thead>
+            <th>Wednesday</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Press</td>
+                <td><%= parseFloat(press * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(press * 0.85).toFixed(1) %> x3</td>
+                <td><%= parseFloat(press * 0.95).toFixed(1) %> x1+</td>
+                <td><%= parseFloat(press * 0.90).toFixed(1) %> x3</td>
+                <td><%= parseFloat(press * 0.85).toFixed(1) %> x3</td>
+                <td><%= parseFloat(press * 0.80).toFixed(1) %> x3</td>
+                <td><%= parseFloat(press * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(press * 0.70).toFixed(1) %> x5</td>
+                <td><%= parseFloat(press * 0.65).toFixed(1) %> x5+</td>
+            </tr>
+            <tr>
+                <td>Incline bench</td>
+                <td><%= parseFloat(bench * 0.40).toFixed(1) %> x6</td>
+                <td><%= parseFloat(bench * 0.50).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.60).toFixed(1) %> x3</td>
+                <td><%= parseFloat(bench * 0.60).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.60).toFixed(1) %> x7</td>
+                <td><%= parseFloat(bench * 0.60).toFixed(1) %> x4</td>
+                <td><%= parseFloat(bench * 0.60).toFixed(1) %> x6</td>
+                <td><%= parseFloat(bench * 0.60).toFixed(1) %> x8</td>
+            </tr>
+            <tr>
+                <td>Assistance</td>
+                <td>Shoulders, Chest</td>
+            </tr>
+        </tbody>
+        <thead>
+            <th>Thursday</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Squat</td>
+                <td><%= parseFloat(squat * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.85).toFixed(1) %> x3</td>
+                <td><%= parseFloat(squat * 0.95).toFixed(1) %> x1+</td>
+                <td><%= parseFloat(squat * 0.90).toFixed(1) %> x3</td>
+                <td><%= parseFloat(squat * 0.85).toFixed(1) %> x3</td>
+                <td><%= parseFloat(squat * 0.80).toFixed(1) %> x3</td>
+                <td><%= parseFloat(squat * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.70).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.65).toFixed(1) %> x5+</td>
+            </tr>
+            <tr>
+                <td>Sumo Deadlift</td>
+                <td><%= parseFloat(deadlift * 0.50).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.60).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.70).toFixed(1) %> x3</td>
+                <td><%= parseFloat(deadlift * 0.70).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.70).toFixed(1) %> x7</td>
+                <td><%= parseFloat(deadlift * 0.70).toFixed(1) %> x4</td>
+                <td><%= parseFloat(deadlift * 0.70).toFixed(1) %> x6</td>
+                <td><%= parseFloat(deadlift * 0.70).toFixed(1) %> x8</td>
+            </tr>
+            <tr>
+                <td>Assistance</td>
+                <td>Legs, Abs</td>
+            </tr>
+        </tbody>
+        <thead>
+            <th>Friday</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Bench</td>
+                <td><%= parseFloat(bench * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.85).toFixed(1) %> x3</td>
+                <td><%= parseFloat(bench * 0.95).toFixed(1) %> x1+</td>
+                <td><%= parseFloat(bench * 0.90).toFixed(1) %> x3</td>
+                <td><%= parseFloat(bench * 0.85).toFixed(1) %> x3</td>
+                <td><%= parseFloat(bench * 0.80).toFixed(1) %> x3</td>
+                <td><%= parseFloat(bench * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.70).toFixed(1) %> x3</td>
+                <td><%= parseFloat(bench * 0.65).toFixed(1) %> x5+</td>
+            </tr>
+            <tr>
+                <td>Close Grip Bench</td>
+                <td><%= parseFloat(bench * 0.40).toFixed(1) %> x6</td>
+                <td><%= parseFloat(bench * 0.50).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.60).toFixed(1) %> x3</td>
+                <td><%= parseFloat(bench * 0.60).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.60).toFixed(1) %> x7</td>
+                <td><%= parseFloat(bench * 0.60).toFixed(1) %> x4</td>
+                <td><%= parseFloat(bench * 0.60).toFixed(1) %> x6</td>
+                <td><%= parseFloat(bench * 0.60).toFixed(1) %> x8</td>
+            </tr>
+            <tr>
+                <td>Assistance</td>
+                <td>Arms</td>
+            </tr>
+        </tbody>
+        <thead>
+            <th>Saturday</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Deadlift</td>
+                <td><%= parseFloat(deadlift * 0.725).toFixed(1) %> x3</td>
+                <td><%= parseFloat(deadlift * 0.725).toFixed(1) %> x3</td>
+                <td><%= parseFloat(deadlift * 0.725).toFixed(1) %> x3</td>
+                <td><%= parseFloat(deadlift * 0.725).toFixed(1) %> x3</td>
+                <td><%= parseFloat(deadlift * 0.725).toFixed(1) %> x3</td>
+                <td><%= parseFloat(deadlift * 0.725).toFixed(1) %> x3</td>
+                <td><%= parseFloat(deadlift * 0.725).toFixed(1) %> x3</td>
+                <td><%= parseFloat(deadlift * 0.725).toFixed(1) %> x3</td>
+            </tr>
+            <tr>
+                <td>Front Squat</td>
+                <td><%= parseFloat(squat * 0.75).toFixed(1) %> x3</td>
+                <td><%= parseFloat(squat * 0.75).toFixed(1) %> x3</td>
+                <td><%= parseFloat(squat * 0.75).toFixed(1) %> x3</td>
+                <td><%= parseFloat(squat * 0.75).toFixed(1) %> x3</td>
+                <td><%= parseFloat(squat * 0.75).toFixed(1) %> x3</td>
+                <td><%= parseFloat(squat * 0.75).toFixed(1) %> x3</td>
+            </tr>
+            <tr>
+                <td>Assistance</td>
+                <td>Upper back, Legs</td>
+            </tr>
+        </tbody>
+    </table>
+<%} else if (maxes.program == "BtM"){ %>
+    <h>Selected Program: BtM</h>
+    <a href="https://jimwendler.com/blogs/jimwendler-com/101078918-building-the-monolith-5-3-1-for-size">Source</a>
+    <h1>Week 1 of 3 week cycle</h1>
+    <table class="table table-bordered">
+        <thead><th>Monday</th></thead>
+        <tbody>
+
+            <tr>
+                <td>Squat</td>
+                <td><%= parseFloat(squat * 0.70).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.80).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.90).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.90).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.90).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.90).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.90).toFixed(1) %> x5</td>
+            </tr>
+            <tr>
+                <td>Press</td>
+                <td><%= parseFloat(press * 0.70).toFixed(1) %> x5</td>
+                <td><%= parseFloat(press * 0.80).toFixed(1) %> x5</td>
+                <td><%= parseFloat(press * 0.90).toFixed(1) %> x5</td>
+                <td><%= parseFloat(press * 0.70).toFixed(1) %> xAMRAP</td>
+            </tr>
+            <tr>
+                <td>Chin ups x100</td>
+            </tr>
+            <tr>
+                <td>Face pulls/Band pull aparts x100</td>
+            </tr>
+            <tr>
+                <td>Dips x100-200</td>
+            </tr>
+        </tbody>
+        <thead><th>Wednesday</th></thead>
+        <tbody>
+            <tr>
+                <td>Deadlift</td>
+                <td><%= parseFloat(deadlift * 0.70).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.80).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.90).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.90).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.90).toFixed(1) %> x5</td>
+            </tr>
+            <tr>
+                <td>Bench</td>
+                <td><%= parseFloat(bench * 0.70).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.80).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.90).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.90).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.90).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.90).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.90).toFixed(1) %> x5</td>
+            </tr>
+            <tr>
+                <td>Dumbell rows - 5x10-20</td>
+            </tr>
+            <tr>
+                <td>Curls x100</td>
+            </tr>
+        </tbody>
+        <thead><th>Friday</th></thead>
+        <tbody>
+            <tr>
+                <td>Squat</td>
+                <td><%= parseFloat(squat * 0.70).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.80).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.90).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.45).toFixed(1) %> x20</td>
+            </tr>
+            <tr>
+                <td>Press</td>
+                <td>10 sets of <%= parseFloat(press * 0.70).toFixed(1) %> x5</td>
+            </tr>
+            <tr>
+                <td>Chin ups - 5x5(weighted)</td>
+            </tr>
+            <tr>
+                <td>Face pulls/Band pull aparts x100</td>
+            </tr>
+            <tr>
+                <td>Shrugs x100</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Week 2 of 3 week cycle</h1>
+    <table class="table table-bordered">
+        <caption>Week 2 of 3 week cycle</caption>
+        <thead><th>Monday</th></thead>
+        <tbody>
+            <tr>
+                <td>Squat</td>
+                <td><%= parseFloat(squat * 0.65).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.85).toFixed(1) %> x5</td>
+            </tr>
+            <tr>
+                <td>Press</td>
+                <td><%= parseFloat(press * 0.65).toFixed(1) %> x5</td>
+                <td><%= parseFloat(press * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(press * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(press * 0.65).toFixed(1) %> xAMRAP</td>
+            </tr>
+            <tr>
+                <td>Chin ups x100</td>
+            </tr>
+            <tr>
+                <td>Face pulls/Band pull aparts x100</td>
+            </tr>
+            <tr>
+                <td>Dips x100-200</td>
+            </tr>
+        </tbody>
+        <thead><th>Wednesday</th></thead>
+        <tbody>
+            <tr>
+                <td>Deadlift</td>
+                <td><%= parseFloat(deadlift * 0.65).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.85).toFixed(1) %> x5</td>
+            </tr>
+            <tr>
+                <td>Bench</td>
+                <td><%= parseFloat(bench * 0.65).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.85).toFixed(1) %> x5</td>
+            </tr>
+            <tr>
+                <td>Dumbell rows - 5x10-20</td>
+            </tr>
+            <tr>
+                <td>Curls x100</td>
+            </tr>
+        </tbody>
+        <thead><th>Friday</th></thead>
+        <tbody>
+            <tr>
+                <td>Squat</td>
+                <td><%= parseFloat(squat * 0.65).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.55).toFixed(1) %> x20</td>
+            </tr>
+            <tr>
+                <td>Press</td>
+                <td>10 sets of <%= parseFloat(press * 0.50).toFixed(1) %> x5</td>
+            </tr>
+            <tr>
+                <td>Chin ups - 5x5(weighted)</td>
+            </tr>
+            <tr>
+                <td>Face pulls/Band pull aparts x100</td>
+            </tr>
+            <tr>
+                <td>Shrugs x100</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Week 3 of 3 week cycle</h1>
+    <table class="table table-bordered">
+        <caption>Week 3 of 3 week cycle</caption>
+        <thead><th>Monday</th></thead>
+        <tbody>
+            <tr>
+                <td>Squat</td>
+                <td><%= parseFloat(squat * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.95).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.95).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.95).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.95).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.95).toFixed(1) %> x5</td>
+            </tr>
+            <tr>
+                <td>Press</td>
+                <td><%= parseFloat(press * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(press * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(press * 0.95).toFixed(1) %> x5</td>
+                <td><%= parseFloat(press * 0.75).toFixed(1) %> xAMRAP</td>
+            </tr>
+            <tr>
+                <td>Chin ups x100</td>
+            </tr>
+            <tr>
+                <td>Face pulls/Band pull aparts x100</td>
+            </tr>
+            <tr>
+                <td>Dips x100-200</td>
+            </tr>
+        </tbody>
+        <thead><th>Wednesday</th></thead>
+        <tbody>
+            <tr>
+                <td>Deadlift</td>
+                <td><%= parseFloat(deadlift * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.95).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.95).toFixed(1) %> x5</td>
+                <td><%= parseFloat(deadlift * 0.95).toFixed(1) %> x5</td>
+            </tr>
+            <tr>
+                <td>Bench</td>
+                <td><%= parseFloat(bench * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.95).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.95).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.95).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.95).toFixed(1) %> x5</td>
+                <td><%= parseFloat(bench * 0.95).toFixed(1) %> x5</td>
+            </tr>
+            <tr>
+                <td>Dumbell rows - 5x10-20</td>
+            </tr>
+            <tr>
+                <td>Curls x100</td>
+            </tr>
+        </tbody>
+        <thead><th>Friday</th></thead>
+        <tbody>
+            <tr>
+                <td>Squat</td>
+                <td><%= parseFloat(squat * 0.75).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.85).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.95).toFixed(1) %> x5</td>
+                <td><%= parseFloat(squat * 0.55).toFixed(1) %> x20</td>
+            </tr>
+            <tr>
+                <td>Press</td>
+                <td>10 sets of <%= parseFloat(press * 0.75).toFixed(1) %> x5</td>
+            </tr>
+            <tr>
+                <td>Chin ups - 5x5(weighted)</td>
+            </tr>
+            <tr>
+                <td>Face pulls/Band pull aparts x100</td>
+            </tr>
+            <tr>
+                <td>Shrugs x100</td>
+            </tr>
+        </tbody>
+    </table>
+<% }  %>
+
+
+<%- include ("partials/footer") %>

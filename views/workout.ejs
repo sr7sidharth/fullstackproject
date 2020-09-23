@@ -1,0 +1,34 @@
+<%- include ("partials/header") %>
+
+<h>Workout</h>
+
+<form action="/workoutgen" method="POST">
+    <div class="form-group">
+        <input class="form-control" type="number" name="bench" placeholder="Bench 1RM">
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="number" name="squat" placeholder="Squat 1RM">
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="number" name="press" placeholder="Press 1RM">
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="number" name="deadlift" placeholder="Deadlift 1RM">
+    </div>
+    <select class="form-group custom-select" name="unit">
+        <option value="kg">kg</option>
+        <option selected value="lbs">lbs</option>
+    </select>
+    <select class="form-group custom-select" name="program">
+        <option value="nSuns">nSuns</option>
+        <option selected value="BtM">Building the Monolith</option>
+    </select>
+    <div class="form-group">
+        <button class="btn btn-lg btn-primary btn-block">Submit</button>
+    </div>
+</form>
+
+<h>Don't know how to do a particular exercise? Look here for guides!</h>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/QHRuTYtSbJQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<%- include ("partials/footer") %>
