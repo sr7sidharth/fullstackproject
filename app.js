@@ -3,12 +3,17 @@ var express = require("express"),
     bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
     skills = require("./models/skill"),
-    seedDB = require("./seeds");
+    form_links = require("./models/form"),
+    seedDB = require("./seeds"),
+    seedFormDB = require("./formSeeds");
 
-mongoose.connect("mongodb://localhost/skills", { useNewUrlParser: true, useUnifiedTopology: true});
+//Tried to connect 2 databases with 2 different schemas but was not working, instructions online were not clear
+//Instead, using a database main with skills and forms as 2 schemas in it
+mongoose.connect("mongodb://localhost/main", { useNewUrlParser: true, useUnifiedTopology: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 //seedDB();
+//seedFormDB();
 
 app.get("/", function(req, res){
     res.render("landing");
@@ -25,7 +30,13 @@ app.get("/skills", function(req, res){
 });
 
 app.get("/workoutgen", function(req, res){
-    res.render("workout");
+    form_links.find({}, function(err, allForms){
+        if (err){
+            console.log(err);
+        }else{
+            res.render("workout", {form_links : allForms});
+        }
+    })
 });
 
 app.post("/workoutgen", function(req,res){

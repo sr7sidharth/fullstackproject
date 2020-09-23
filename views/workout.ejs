@@ -28,7 +28,20 @@
     </div>
 </form>
 
-<h>Don't know how to do a particular exercise? Look here for guides!</h>
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/QHRuTYtSbJQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+    <% for (var i = 0; i < form_links.length; i++){ %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4><%= form_links[i].name %></h4>
+                </div>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="<%= form_links[i].link %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</div>
+</div>
 <%- include ("partials/footer") %>
