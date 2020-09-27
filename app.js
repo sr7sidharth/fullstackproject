@@ -1,3 +1,5 @@
+const form = require("./models/form");
+
 var express = require("express"), 
     app = express(),
     bodyParser = require("body-parser"),
@@ -36,10 +38,20 @@ app.get("/workoutgen", function(req, res){
         }else{
             res.render("workout", {form_links : allForms});
         }
-    })
+    });
 });
 
-app.post("/workoutgen", function(req,res){
+app.post("/workoutgen", function(req, res){
+    form_links.find({name: {$regex: req.body.search_exercises} }, function(err, allForms){
+        if (err){
+            console.log(err);
+        }else{
+            res.render("workout", {form_links : allForms});
+        }
+    });
+});
+
+app.post("/template", function(req,res){
     var maxes = {bench: req.body.bench, 
         squat: req.body.squat,
         press: req.body.press,

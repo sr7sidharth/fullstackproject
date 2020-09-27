@@ -4,7 +4,7 @@
 <div class="container">
     <div class="jumbotron">
         <h3 style="margin: 0px; padding-bottom: 0.7em;">Enter your maxes:</h3>
-        <form action="/workoutgen" method="POST">
+        <form action="/template" method="POST">
             <div class="form-group">
                 <input class="form-control" type="number" name="bench" placeholder="Bench 1RM">
             </div>
@@ -40,20 +40,29 @@
 
 <div class="container">
     <h3 style="margin: 0px; padding-bottom: 0.7em;">Check these links for form and other tips</h3>
-    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
-        <% for (var i = 0; i < form_links.length; i++){ %>
-            <div class="col-lg-4 col-sm-6 col-xs-12">
-                <div class="card ">
-                    <div class="card-body">
-                        <h4><%= form_links[i].name %></h4>
-                    
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="<%= form_links[i].link %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    <form action="/workoutgen" method="POST">
+        <div class="form-group">
+            <input type="text" name="search_exercises" placeholder="Type exercise to search:">
+            <button id="formSearch">Submit</button>
+        </div>
+    </form>
+    <div class="row text-center exercises" style="display:flex; flex-wrap: wrap;">
+        <% if (form_links.length == 0) { %>
+            <h> No results found! </h>
+       <% }else{ %>
+            <% for (var i = 0; i < form_links.length; i++){ %>
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="card ">
+                        <div class="card-body">
+                            <h4><%= form_links[i].name %></h4>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="<%= form_links[i].link %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        <% } %>
+            <% } %>
+        <%}%>
     </div>
     </div>
 </div>
