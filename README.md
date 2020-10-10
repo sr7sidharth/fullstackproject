@@ -7,9 +7,7 @@ Portfolio website built with MongoDB, Node.js and Express.js
 
 
 NOTES:
-1. Note the split of header partials - this allows each page to have additional script tags that need not be used on other pages. 
-
-for coronavirus tracker: (additional feature to be implemented shortly)
+for coronavirus tracker, these are the API I have shortlisted: (additional feature to be implemented shortly)
 https://www.npmjs.com/package/axios
 https://documenter.getpostman.com/view/8854915/SzS8rjHv?version=latest#7618a0d5-d412-4360-9548-569645770969
 https://covidtracking.com/
