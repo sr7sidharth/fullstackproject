@@ -42,7 +42,7 @@ app.get("/workoutgen", function(req, res){
 });
 
 app.post("/workoutgen", function(req, res){
-    form_links.find({name: {$regex: req.body.search_exercises} }, function(err, allForms){
+    form_links.find({search_tags: {$regex: req.body.search_exercises.toLowerCase().replace(/\s/g, '')} }, function(err, allForms){
         if (err){
             console.log(err);
         }else{
@@ -60,6 +60,7 @@ app.post("/template", function(req,res){
         program: req.body.program};
     res.render("template", {maxes: maxes});
 });
+
 
 app.listen(3000, function(){
     console.log("Listening on Port 3000");
