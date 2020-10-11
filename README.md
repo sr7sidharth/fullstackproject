@@ -7,6 +7,7 @@ Portfolio website built with MongoDB, Node.js and Express.js
 
 
 NOTES:
+1.
 for coronavirus tracker, these are the API I have shortlisted: (additional feature to be implemented shortly)
 https://www.npmjs.com/package/axios
 https://documenter.getpostman.com/view/8854915/SzS8rjHv?version=latest#7618a0d5-d412-4360-9548-569645770969
@@ -25,3 +26,6 @@ graph:
 tracking from: int //likely needs to be string
 updated on: int (date, time) //likely needs to be string
 source: str 
+
+2.
+application that compares given dimension to common household objects (iphone, fridge, average doorway, 2 story house)
