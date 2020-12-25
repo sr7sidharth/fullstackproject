@@ -29,3 +29,6 @@ source: str
 
 2.
 application that compares given dimension to common household objects (iphone, fridge, average doorway, 2 story house)
+
+
+For the more recent version of this project, refer to <UPCOMING> 
